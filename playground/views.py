@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-#from playground\s3dictionary.py import S3Dictionary
+from .s3dictionary import dictionaryCreator
 
 # Create your views here.
 #this is the request handler
@@ -11,5 +10,5 @@ def  say_hello(request):
     return render(request, 'hello.html',{'name':'Jabril'})
 
 def s3RequestHandler(request):
-       return render(request,'hello.html')
+       return render(request,'hello.html',dictionaryCreator())
     

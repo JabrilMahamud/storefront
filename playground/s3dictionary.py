@@ -1,8 +1,6 @@
+from modulefinder import Module
 import boto3
 from datetime import date, datetime
-import json
-
-
 
 def dictionaryCreator():
     dynamodb = boto3.resource("dynamodb", region_name="eu-west-2")
@@ -14,8 +12,6 @@ def dictionaryCreator():
             "#S": "status",
         },
     )
-    with open("MetaData.json", "w") as fp:
-        json.dump(tableDict, fp, sort_keys=True)
+    return tableDict
 
-dictionaryCreator()
 print("Complete")
