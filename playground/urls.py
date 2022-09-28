@@ -5,6 +5,6 @@ from . import views
 
 #URLConfig
 urlpatterns = [
-    path('',views.say_hello),
-    path('s3/',views.s3RequestHandler)
+    path('hello/',views.say_hello),
+    path('',views.s3RequestHandler)
 ]

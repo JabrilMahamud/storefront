@@ -10,5 +10,5 @@ def  say_hello(request):
     return render(request, 'hello.html',{'name':'Jabril'})
 
 def s3RequestHandler(request):
-       return render(request,'hello.html',dictionaryCreator())
+       return render(request,'jsonDisplay.html',dictionaryCreator())
     
