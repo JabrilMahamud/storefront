@@ -1,8 +1,11 @@
 from distutils.log import error
+from json import loads
 from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse
 from .s3dictionary import tableDict
+from flask import jsonify
+from json2html import *
 # Create your views here.
 #this is the request handler
 #turns requests into responses
