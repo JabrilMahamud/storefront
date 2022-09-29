@@ -1,3 +1,5 @@
+from distutils.log import error
+from urllib import response
 from django.shortcuts import render
 from django.http import HttpResponse
 from .s3dictionary import tableDict
@@ -11,5 +13,4 @@ def  say_hello(request):
     return render(request, 'hello.html',{'name':'Jabril'})
 
 def s3RequestHandler(request):
-       return render(request,'jsonDisplay.html',tableDict)
-    
+    return render(request,'jsonDisplay.html',tableDict)

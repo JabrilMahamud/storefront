@@ -1,17 +1,16 @@
-<html>
-    <head>
-        <title>
-            Metadata stuff
-        </title>
-        <meta name="description" content="description of metadata">
-    </head>
-    <body>
-        <p>
-            {%if tableData%}
-            </h3>Hello {{tableData}}<h3/>
-            {% else %}
-            <h1>Failed to output</h1>
-            {%endif%}
-        <p/>
-    </body>
-</html>
+
+<head>
+    <title>
+        Metadata stuff
+    </title>
+    <meta name="description" content="description of metadata">
+</head>
+<body>
+    <p>
+        {%if tableDict%}
+        </h3>Metadata {{tableDict}}<h3/>
+        {% else %}
+        <h1>Failed to output</h1>
+        {%endif%}
+    <p/>
+</body>
