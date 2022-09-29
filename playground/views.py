@@ -17,3 +17,5 @@ def  say_hello(request):
 
 def s3RequestHandler(request):
     return render(request,'jsonDisplay.html',tableDict)
+def s3responseHandler(response):
+    return render(response,)
