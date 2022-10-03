@@ -1,17 +1,21 @@
-from modulefinder import Module
 import boto3
-from datetime import date, datetime
 
-def dictionaryCreator():
-    dynamodb = boto3.resource("dynamodb", region_name="eu-west-2")
-    table = dynamodb.Table("MetadataJson")
+def MetadataFunction():
+    dynamodb = boto3.resource("dynamodb", region_name='eu-west-2')
+    table = dynamodb.Table('MetadataJson')
+    
     tableDict = table.scan(
-        ProjectionExpression="#AN, account, #S",
+        ProjectionExpression='#AN, account, #S',
         ExpressionAttributeNames={
-            "#AN": "account-name",
-            "#S": "status",
+            '#AN': 'account-name',
+            '#S': 'status',
         },
     )
-    return tableDict
-
-print("Complete")
+    tableList = list(tableDict.items())
+    tableResponse = tableList[0][1]
+    tableData = []
+    for i in range(len(tableResponse)):
+            tableData.append([tableResponse[i].get('account-name'), 
+            tableResponse[i].get('account'), 
+            tableResponse[i].get('status')])
+    return tableData
